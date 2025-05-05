@@ -27,6 +27,4 @@ python tracking/test.py --tracker_name ostrack_twobranch --tracker_param 384 --c
 ```
 
 ## Results and Models
-| Model | RGBT210(PR/SR) | RGBT234(PR/SR) | LasHeR(PR/NPR/SR) | VTUAV(PR/SR) | Checkpoint | Raw Result |
-|:-------:|:----------------:|:----------------:|:-------------------:|:--------------:|:--------------:|:--------------:|
-| AFter |       |      |     |     | [download]() | [download]()
+...
