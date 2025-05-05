@@ -10,30 +10,23 @@ We use the LasHeR training set for training, GTOT, RGBT210, RGBT234, LasHeR test
 * [VTUAV](https://github.com/zhang-pengyu/DUT-VTUAV)
 
 ## Environment Preparation
-Clone repo:  
-```
-git clone https://github.com/Alexadlu/AFter.git
-cd AFter
-```
-Our code is trained and tested with Python == 3.8, PyTorch == 1.8.1 and CUDA == 11.2 on NVIDIA GeForce RTX 4090, you may use a different version according to your GPU.
-```
-conda create -n after python=3.8.13
-conda activate after
-pip install -r requirements.txt
-```
+1. Our code is trained and tested with Python == 3.8.13, PyTorch == 2.1.1 and CUDA == 11.8 on NVIDIA GeForce RTX 4090.
+2. Install causal_conv1d and mamba from our repo.
 
 ## Training
-1. Modify the project path and dataset path in `$PROJECT_ROOT$/ltr/admin/local.py`.  
-2. Download [ToMP-50](https://drive.google.com/file/d/1dU1IYIv5x_7iOUVTgh8uOq36POFOQBWT/edit) pretrained weights and put it under `$PROJECT_ROOT$/ltr/models/pretrained`.
-3. Run the following command.  
+1. We adopt [OSTrack](https://github.com/botaoye/OSTrack) as our base tracker. For our best result, we need to load the parameter from [DropMAE](https://github.com/jimmy-dq/DropTrack).
+2. Modify the relevant dataset and pretrained model paths, Then run the following command.
 ```
-python ltr/run_training.py --train_module tomp --train_name tomp50_v1
+python lib/train/run_training.py --script ostrack_twobranch --config 384 --save_dir your_save_dir
 ```
 
 ## Evaluation
-1. Modify the dataset path in `$PROJECT_ROOT$/pytracking/evaluation/environment.py`
-2. Put the checkpoint into `$PROJECT_ROOT$/pytracking/networks` and select the checkpoint name in `$PROJECT_ROOT$/pytracking/parameter/tomp/tomp50.py`. Or just modify the checkpoint path in `$PROJECT_ROOT$/pytracking/parameter/tomp/tomp50.py`.  
-3. Run the following command.  
+Modify the relevant dataset and checkpoint paths, then run the following command. 
 ```
-python pytracking/run_tracker.py --tracker_name tomp --tracker_param tomp50 --runid 8600 --dataset_name lashertestingset
+python tracking/test.py --tracker_name ostrack_twobranch --tracker_param 384 --checkpoint_path your_checkpoint_path
 ```
+
+## Results and Models
+| Model | RGBT210(PR/SR) | RGBT234(PR/SR) | LasHeR(PR/NPR/SR) | VTUAV(PR/SR) | Checkpoint | Raw Result |
+|:-------:|:----------------:|:----------------:|:-------------------:|:--------------:|:--------------:|:--------------:|
+| AFter |       |      |     |     | [download]() | [download]()
