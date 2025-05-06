@@ -27,4 +27,7 @@ python tracking/test.py --tracker_name ostrack_twobranch --tracker_param 384 --c
 ```
 
 ## Results and Models
-...
+| Model | RGBT210(PR/SR) | RGBT234(PR/SR) | LasHeR(PR/NPR/SR) | VTUAV(PR/SR) | Checkpoints & Results |
+|:-------:|:----------------:|:----------------:|:-------------------:|:--------------:|:--------------:|
+| AINet |   87.5/64.8    |  89.2/67.3    | 74.2/70.1/59.1    |   89.3/77.4  | [download](https://pan.baidu.com/s/14f-px39rMS-5G4-jW5pdgA?pwd=mmic)
+
