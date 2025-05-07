@@ -2,8 +2,7 @@
 RGBT Tracking via All-layer Multimodal Interactions with Progressive Fusion Mamba
 
 ## Dataset
-We use the LasHeR training set for training, GTOT, RGBT210, RGBT234, LasHeR testing set, VTUAVST for testing, and their project addresses are as follows:
-* [GTOT](http://chenglongli.cn/code-dataset/)
+We use the LasHeR training set for training, RGBT210, RGBT234, LasHeR testing set, VTUAVST for testing, and their project addresses are as follows:
 * [RGBT210](http://chenglongli.cn/code-dataset/)
 * [RGBT234](http://chenglongli.cn/code-dataset/)
 * [LasHeR](https://github.com/BUGPLEASEOUT/LasHeR)
